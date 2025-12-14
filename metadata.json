@@ -1,0 +1,8 @@
+{
+  "name": "cảm biến hệ mặt trời",
+  "description": "A 3D Solar System explorer controlled by hand gestures. Use an open palm to zoom in, a closed fist to zoom out, and move your hand to rotate the camera. Powered by React Three Fiber and Gemini.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
