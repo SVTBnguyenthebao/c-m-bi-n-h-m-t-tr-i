@@ -350,8 +350,10 @@ const MoonMesh: React.FC<MoonMeshProps> = ({ moon, parentRadius }) => {
    );
 };
 
+// --- CONTROLS LOGIC ---
 const ControlsController = ({ handState, focusedPlanet }: { handState: HandGestureState, focusedPlanet: PlanetData | null }) => {
-  const controlsRef = useRef<OrbitControlsImpl>(null);
+  // Fixed: Use 'any' to avoid "Cannot use namespace 'OrbitControlsImpl' as a type" error
+  const controlsRef = useRef<any>(null);
   const { camera } = useThree();
   const lastInteractionRef = useRef(0);
   
@@ -386,7 +388,7 @@ const ControlsController = ({ handState, focusedPlanet }: { handState: HandGestu
 
     // MODE 2: HAND CONTROL
     let isInteracting = false;
-    const ZOOM_SPEED = 1.02; 
+    const ZOOM_SPEED = 1.02; // Restore to original fast speed
 
     if (handState.isDetected) {
        lastInteractionRef.current = currentTime;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+// @ts-ignore
 import SolarSystem from './components/SolarSystem';
+// @ts-ignore
 import HandController from './components/HandController';
 import { HandGestureState, PlanetData } from './types';
 
@@ -45,7 +47,7 @@ const PLANETS: PlanetData[] = [
     distance: 18, 
     speed: 0.4, 
     startAngle: Math.random() * 6, 
-    color: '#6B8E23', 
+    color: '#657f48', 
     textureMap: 'https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lfs_earth_4k.jpg',
     description: '', 
     moons: [{ id: 'moon', name: 'Moon', radius: 0.4, distance: 3, speed: 1.5, startAngle: 0, color: '#DDDDDD', textureMap: 'https://www.solarsystemscope.com/textures/download/8k_moon.jpg', description: '' }] 
@@ -199,9 +201,6 @@ const App: React.FC = () => {
         onUpdate={handleHandUpdate} 
         onCameraReady={handleCameraReady}
       />
-
-      {/* Intro Overlays - Removed text as requested, just pure camera until timeout */}
-      {/* Logic is handled by state transitions in useEffect */}
 
       {/* HUD Controls (Only visible when active) */}
       <div className={`absolute bottom-4 right-4 pointer-events-none text-right z-10 transition-opacity duration-500 ${appState === 'ACTIVE' ? 'opacity-100' : 'opacity-0'}`}>

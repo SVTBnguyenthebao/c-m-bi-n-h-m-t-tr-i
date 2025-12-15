@@ -1,0 +1,1 @@
+// This file is deprecated. Please use the 'types.d.ts' file in the root directory.
